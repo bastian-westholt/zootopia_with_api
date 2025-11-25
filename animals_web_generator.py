@@ -2,7 +2,6 @@
 
 import data_fetcher
 
-
 def serialize_animal(animal):
     """Serialize a single animal object to HTML.
 
