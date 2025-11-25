@@ -1,10 +1,14 @@
 """Module for loading animal data and generating HTML output."""
 
+import requests
 import json
 import os
 
+HEADERS = {
+    'X-Api-Key': 'RBOdUrcCXeFrF/AO12uvQA==YcxtK55xKHfbOX6J'
+}
 
-def load_data(file_path):
+def load_data(url):
     """Loads a JSON file.
 
     Args:
@@ -13,8 +17,8 @@ def load_data(file_path):
     Returns:
         Parsed JSON data
     """
-    with open(file_path, "r") as handle:
-        return json.load(handle)
+    animals_res = requests.get(url, headers=HEADERS).json()
+    return animals_res
 
 
 def serialize_animal(animal):
@@ -29,14 +33,13 @@ def serialize_animal(animal):
     output = ''
     output += f'<li class="cards__item">\n'
     output += f'  <div class="card__title">Name: {animal["name"]}</div>\n'
-    output += f'  <div class="card__text">\n'
-    output += f'    <ul>\n'
-    output += f'      <li><strong>Diet:</strong> {animal["characteristics"]["diet"]}</li>\n'
-    output += f'      <li><strong>Location:</strong> {animal["locations"][0]}</li>\n'
+    output += f'  <p class="card__text">\n'
+    output += f'      <strong>Diet:</strong> {animal["characteristics"]["diet"]}</br>\n'
+    output += f'      <strong>Location:</strong> {animal["locations"][0]}</br>\n'
     if "type" in animal["characteristics"]:
-        output += f'      <li><strong>Type:</strong> {animal["characteristics"]["type"]}</li>\n'
-    output += f'    </ul>\n'
-    output += f'  </div>\n'
+        output += f'      <strong>Type:</strong> {animal["characteristics"]["type"]}\n'
+    output += f'  </p>\n'
+    output += f'  </div>\n'-
     output += f'</li>\n'
     output += '\n'
     return output
@@ -81,7 +84,9 @@ def replace_html_content(template_path, output_path, animals_data_str):
 
 def main():
     """Main function to orchestrate the HTML generation process."""
-    animals_data = load_data('animals_data.json')
+    animal = 'Fox'
+    url = f'https://api.api-ninjas.com/v1/animals?name={animal}'
+    animals_data = load_data(url)
     animals_data_str = get_data(animals_data)
     # print(animals_data_str)
     replace_html_content('animals_template.html', 'animals.html',

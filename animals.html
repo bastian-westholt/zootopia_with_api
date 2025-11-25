@@ -1,5 +1,8 @@
 <html>
     <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Kablammo&display=swap" rel="stylesheet">
         <style>
         @gray-darker:               #444444;
         @gray-dark:                 #696969;
@@ -10,19 +13,27 @@
 
 
         html {
-          background-color: #ffe9e9;
+          background-color: #1F1925;
         }
 
         h1 {
+            font-family: "Kablammo", system-ui;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-variation-settings:
+              "MORF" 0;
             text-align: center;
             font-size: 40pt;
-            font-weight: normal;
+
+
         }
 
         body {
-          font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif;
+          font-family: "Avenir Next";
           font-style: normal;
           font-weight: 400;
+          color: aliceblue;
           letter-spacing: 0;
           padding: 1rem;
           text-rendering: optimizeLegibility;
@@ -40,8 +51,8 @@
         }
 
         .cards__item {
-          background-color: white;
-          border-radius: 0.25rem;
+          background-color: #21212C;
+          border-radius: 0.5rem;
           box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
           overflow: hidden;
           padding: 1rem;
@@ -50,15 +61,19 @@
 
         .card__title {
           color: @gray-dark;
-          font-size: 1.25rem;
-          font-weight: 300;
+          font-family: "Kablammo", system-ui;
+          font-size: 2rem;
+          font-weight: 400;
+          font-style: normal;
+          font-variation-settings:
+            "MORF" 0;
           letter-spacing: 2px;
           text-transform: uppercase;
         }
 
         .card__text {
           flex: 1 1 auto;
-          font-size: 0.95rem;
+          font-size: 1.25rem;
           line-height: 2;
           margin-bottom: 1.25rem;
         }
@@ -69,201 +84,182 @@
         <ul class="cards">
 <li class="cards__item">
   <div class="card__title">Name: American Foxhound</div>
-  <div class="card__text">
-    <ul>
-      <li><strong>Diet:</strong> Omnivore</li>
-      <li><strong>Location:</strong> North-America</li>
-      <li><strong>Type:</strong> Hound</li>
-    </ul>
+  <p class="card__text">
+      <strong>Diet:</strong> Omnivore</br>
+      <strong>Location:</strong> North-America</br>
+      <strong>Type:</strong> Hound
+  </p>
   </div>
 </li>
 
 <li class="cards__item">
   <div class="card__title">Name: Arctic Fox</div>
-  <div class="card__text">
-    <ul>
-      <li><strong>Diet:</strong> Carnivore</li>
-      <li><strong>Location:</strong> Eurasia</li>
-      <li><strong>Type:</strong> Mammal</li>
-    </ul>
+  <p class="card__text">
+      <strong>Diet:</strong> Carnivore</br>
+      <strong>Location:</strong> Eurasia</br>
+      <strong>Type:</strong> Mammal
+  </p>
   </div>
 </li>
 
 <li class="cards__item">
   <div class="card__title">Name: Cross Fox</div>
-  <div class="card__text">
-    <ul>
-      <li><strong>Diet:</strong> Carnivore</li>
-      <li><strong>Location:</strong> North-America</li>
-      <li><strong>Type:</strong> mammal</li>
-    </ul>
+  <p class="card__text">
+      <strong>Diet:</strong> Carnivore</br>
+      <strong>Location:</strong> North-America</br>
+      <strong>Type:</strong> mammal
+  </p>
   </div>
 </li>
 
 <li class="cards__item">
   <div class="card__title">Name: Darwin’s fox</div>
-  <div class="card__text">
-    <ul>
-      <li><strong>Diet:</strong> Omnivore</li>
-      <li><strong>Location:</strong> South-America</li>
-      <li><strong>Type:</strong> Mammal</li>
-    </ul>
+  <p class="card__text">
+      <strong>Diet:</strong> Omnivore</br>
+      <strong>Location:</strong> South-America</br>
+      <strong>Type:</strong> Mammal
+  </p>
   </div>
 </li>
 
 <li class="cards__item">
   <div class="card__title">Name: English Foxhound</div>
-  <div class="card__text">
-    <ul>
-      <li><strong>Diet:</strong> Omnivore</li>
-      <li><strong>Location:</strong> Europe</li>
-    </ul>
+  <p class="card__text">
+      <strong>Diet:</strong> Omnivore</br>
+      <strong>Location:</strong> Europe</br>
+  </p>
   </div>
 </li>
 
 <li class="cards__item">
   <div class="card__title">Name: Fennec Fox</div>
-  <div class="card__text">
-    <ul>
-      <li><strong>Diet:</strong> Omnivore</li>
-      <li><strong>Location:</strong> Africa</li>
-    </ul>
+  <p class="card__text">
+      <strong>Diet:</strong> Omnivore</br>
+      <strong>Location:</strong> Africa</br>
+  </p>
   </div>
 </li>
 
 <li class="cards__item">
   <div class="card__title">Name: Fox</div>
-  <div class="card__text">
-    <ul>
-      <li><strong>Diet:</strong> Carnivore</li>
-      <li><strong>Location:</strong> Africa</li>
-      <li><strong>Type:</strong> Mammal</li>
-    </ul>
+  <p class="card__text">
+      <strong>Diet:</strong> Carnivore</br>
+      <strong>Location:</strong> Africa</br>
+      <strong>Type:</strong> Mammal
+  </p>
   </div>
 </li>
 
 <li class="cards__item">
   <div class="card__title">Name: Fox Snakes</div>
-  <div class="card__text">
-    <ul>
-      <li><strong>Diet:</strong> Carnivore</li>
-      <li><strong>Location:</strong> North-America</li>
-    </ul>
+  <p class="card__text">
+      <strong>Diet:</strong> Carnivore</br>
+      <strong>Location:</strong> North-America</br>
+  </p>
   </div>
 </li>
 
 <li class="cards__item">
   <div class="card__title">Name: Fox Squirrel</div>
-  <div class="card__text">
-    <ul>
-      <li><strong>Diet:</strong> Omnivore</li>
-      <li><strong>Location:</strong> Central-America</li>
-      <li><strong>Type:</strong> rodent</li>
-    </ul>
+  <p class="card__text">
+      <strong>Diet:</strong> Omnivore</br>
+      <strong>Location:</strong> Central-America</br>
+      <strong>Type:</strong> rodent
+  </p>
   </div>
 </li>
 
 <li class="cards__item">
   <div class="card__title">Name: Fox Terrier</div>
-  <div class="card__text">
-    <ul>
-      <li><strong>Diet:</strong> Omnivore</li>
-      <li><strong>Location:</strong> Europe</li>
-    </ul>
+  <p class="card__text">
+      <strong>Diet:</strong> Omnivore</br>
+      <strong>Location:</strong> Europe</br>
+  </p>
   </div>
 </li>
 
 <li class="cards__item">
   <div class="card__title">Name: Golden-Crowned Flying Fox</div>
-  <div class="card__text">
-    <ul>
-      <li><strong>Diet:</strong> Herbivore</li>
-      <li><strong>Location:</strong> Asia</li>
-    </ul>
+  <p class="card__text">
+      <strong>Diet:</strong> Herbivore</br>
+      <strong>Location:</strong> Asia</br>
+  </p>
   </div>
 </li>
 
 <li class="cards__item">
   <div class="card__title">Name: Gray Fox</div>
-  <div class="card__text">
-    <ul>
-      <li><strong>Diet:</strong> Omnivore</li>
-      <li><strong>Location:</strong> Central-America</li>
-      <li><strong>Type:</strong> Mammal</li>
-    </ul>
+  <p class="card__text">
+      <strong>Diet:</strong> Omnivore</br>
+      <strong>Location:</strong> Central-America</br>
+      <strong>Type:</strong> Mammal
+  </p>
   </div>
 </li>
 
 <li class="cards__item">
   <div class="card__title">Name: Kit Fox</div>
-  <div class="card__text">
-    <ul>
-      <li><strong>Diet:</strong> Omnivore</li>
-      <li><strong>Location:</strong> Central-America</li>
-      <li><strong>Type:</strong> mammal</li>
-    </ul>
+  <p class="card__text">
+      <strong>Diet:</strong> Omnivore</br>
+      <strong>Location:</strong> Central-America</br>
+      <strong>Type:</strong> mammal
+  </p>
   </div>
 </li>
 
 <li class="cards__item">
   <div class="card__title">Name: Marble Fox</div>
-  <div class="card__text">
-    <ul>
-      <li><strong>Diet:</strong> Omnivore</li>
-      <li><strong>Location:</strong> North-America</li>
-      <li><strong>Type:</strong> Mammal</li>
-    </ul>
+  <p class="card__text">
+      <strong>Diet:</strong> Omnivore</br>
+      <strong>Location:</strong> North-America</br>
+      <strong>Type:</strong> Mammal
+  </p>
   </div>
 </li>
 
 <li class="cards__item">
   <div class="card__title">Name: Red Fox</div>
-  <div class="card__text">
-    <ul>
-      <li><strong>Diet:</strong> Omnivore</li>
-      <li><strong>Location:</strong> Africa</li>
-    </ul>
+  <p class="card__text">
+      <strong>Diet:</strong> Omnivore</br>
+      <strong>Location:</strong> Africa</br>
+  </p>
   </div>
 </li>
 
 <li class="cards__item">
   <div class="card__title">Name: Smooth Fox Terrier</div>
-  <div class="card__text">
-    <ul>
-      <li><strong>Diet:</strong> Omnivore</li>
-      <li><strong>Location:</strong> Europe</li>
-    </ul>
+  <p class="card__text">
+      <strong>Diet:</strong> Omnivore</br>
+      <strong>Location:</strong> Europe</br>
+  </p>
   </div>
 </li>
 
 <li class="cards__item">
   <div class="card__title">Name: Tibetan Fox</div>
-  <div class="card__text">
-    <ul>
-      <li><strong>Diet:</strong> Carnivore</li>
-      <li><strong>Location:</strong> Asia</li>
-      <li><strong>Type:</strong> Mammal</li>
-    </ul>
+  <p class="card__text">
+      <strong>Diet:</strong> Carnivore</br>
+      <strong>Location:</strong> Asia</br>
+      <strong>Type:</strong> Mammal
+  </p>
   </div>
 </li>
 
 <li class="cards__item">
   <div class="card__title">Name: Toy Fox Terrier</div>
-  <div class="card__text">
-    <ul>
-      <li><strong>Diet:</strong> Omnivore</li>
-      <li><strong>Location:</strong> North-America</li>
-    </ul>
+  <p class="card__text">
+      <strong>Diet:</strong> Omnivore</br>
+      <strong>Location:</strong> North-America</br>
+  </p>
   </div>
 </li>
 
 <li class="cards__item">
   <div class="card__title">Name: Wire Fox Terrier</div>
-  <div class="card__text">
-    <ul>
-      <li><strong>Diet:</strong> Omnivore</li>
-      <li><strong>Location:</strong> Europe</li>
-    </ul>
+  <p class="card__text">
+      <strong>Diet:</strong> Omnivore</br>
+      <strong>Location:</strong> Europe</br>
+  </p>
   </div>
 </li>
 
