@@ -1,24 +1,6 @@
 """Module for loading animal data and generating HTML output."""
 
-import requests
-import json
-import os
-
-HEADERS = {
-    'X-Api-Key': 'RBOdUrcCXeFrF/AO12uvQA==YcxtK55xKHfbOX6J'
-}
-
-def load_data(url):
-    """Requests animal json from animal-api.
-
-    Args:
-        url: URL for HTTP GET-Method
-
-    Returns:
-        Parsed JSON data
-    """
-    animals_res = requests.get(url, headers=HEADERS).json()
-    return animals_res
+import data_fetcher
 
 
 def serialize_animal(animal):
@@ -33,19 +15,19 @@ def serialize_animal(animal):
     output = ''
     output += f'<li class="cards__item">\n'
     output += f'  <div class="card__title">Name: {animal["name"]}</div>\n'
-    output += f'  <p class="card__text">\n'
-    output += f'      <strong>Diet:</strong> {animal["characteristics"]["diet"]}</br>\n'
-    output += f'      <strong>Location:</strong> {animal["locations"][0]}</br>\n'
+    output += f'    <p class="card__text">\n'
+    output += f'        <strong>Diet:</strong> {animal["characteristics"]["diet"]}</br>\n'
+    output += f'        <strong>Location:</strong> {animal["locations"][0]}</br>\n'
     if "type" in animal["characteristics"]:
-        output += f'      <strong>Type:</strong> {animal["characteristics"]["type"]}\n'
-    output += f'  </p>\n'
+        output += f'        <strong>Type:</strong> {animal["characteristics"]["type"]}\n'
+    output += f'    </p>\n'
     output += f'  </div>\n'
     output += f'</li>\n'
     output += '\n'
     return output
 
 
-def get_data(animals_data):
+def get_data(animals_data, animal_input):
     """Convert all animals data to HTML string.
 
     Args:
@@ -55,8 +37,11 @@ def get_data(animals_data):
         Combined HTML string for all animals
     """
     output = ''
-    for animal in animals_data:
-        output += serialize_animal(animal)
+    if not animals_data:
+        output += f"<h2 class='cards__item' style='text-align: center'>The animal \"{animal_input}\" doesn't exist.</h2>"
+    else:
+        for animal in animals_data:
+            output += serialize_animal(animal)
     return output
 
 
@@ -85,9 +70,8 @@ def replace_html_content(template_path, output_path, animals_data_str):
 def main():
     """Main function to orchestrate the HTML generation process."""
     animal = input('Enter an animal or an animal-race: ').lower()
-    url = f'https://api.api-ninjas.com/v1/animals?name={animal}'
-    animals_data = load_data(url)
-    animals_data_str = get_data(animals_data)
+    animals_data = data_fetcher.fetch_data(animal)
+    animals_data_str = get_data(animals_data, animal)
     replace_html_content('animals_template.html', 'animals.html', animals_data_str)
     print('''
 ######## - WEBSITE WAS SUCCESSFULLY GENERATED TO "animal.html" - ########''')
