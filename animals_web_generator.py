@@ -9,10 +9,10 @@ HEADERS = {
 }
 
 def load_data(url):
-    """Loads a JSON file.
+    """Requests animal json from animal-api.
 
     Args:
-        file_path: Path to the JSON file
+        url: URL for HTTP GET-Method
 
     Returns:
         Parsed JSON data
@@ -39,7 +39,7 @@ def serialize_animal(animal):
     if "type" in animal["characteristics"]:
         output += f'      <strong>Type:</strong> {animal["characteristics"]["type"]}\n'
     output += f'  </p>\n'
-    output += f'  </div>\n'-
+    output += f'  </div>\n'
     output += f'</li>\n'
     output += '\n'
     return output
@@ -84,13 +84,13 @@ def replace_html_content(template_path, output_path, animals_data_str):
 
 def main():
     """Main function to orchestrate the HTML generation process."""
-    animal = 'Fox'
+    animal = input('Enter an animal or an animal-race: ').lower()
     url = f'https://api.api-ninjas.com/v1/animals?name={animal}'
     animals_data = load_data(url)
     animals_data_str = get_data(animals_data)
-    # print(animals_data_str)
-    replace_html_content('animals_template.html', 'animals.html',
-                         animals_data_str)
+    replace_html_content('animals_template.html', 'animals.html', animals_data_str)
+    print('''
+######## - WEBSITE WAS SUCCESSFULLY GENERATED TO "animal.html" - ########''')
 
 
 if __name__ == '__main__':
