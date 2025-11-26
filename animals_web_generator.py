@@ -1,6 +1,9 @@
 """Module for loading animal data and generating HTML output."""
 
+import os
+from dotenv import load_dotenv
 import data_fetcher
+
 
 def serialize_animal(animal):
     """Serialize a single animal object to HTML.

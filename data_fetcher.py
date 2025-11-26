@@ -1,8 +1,13 @@
 import requests
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 HEADERS = {
-    'X-Api-Key': 'RBOdUrcCXeFrF/AO12uvQA==YcxtK55xKHfbOX6J'
+    'X-Api-Key': os.getenv('API_KEY')
 }
+
 
 def fetch_data(animal_name):
     """
