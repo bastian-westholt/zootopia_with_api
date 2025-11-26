@@ -67,17 +67,3 @@ def replace_html_content(template_path, output_path, animals_data_str):
 
     with open(output_path, "w") as writer:
         writer.writelines(new_html_content)
-
-
-def main():
-    """Main function to orchestrate the HTML generation process."""
-    animal = input('Enter an animal or an animal-race: ').lower()
-    animals_data = data_fetcher.fetch_data(animal)
-    animals_data_str = get_data(animals_data, animal)
-    replace_html_content('animals_template.html', 'animals.html', animals_data_str)
-    print('''
-######## - WEBSITE WAS SUCCESSFULLY GENERATED TO "animal.html" - ########''')
-
-
-if __name__ == '__main__':
-    main()
